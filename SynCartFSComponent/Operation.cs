@@ -254,7 +254,9 @@ namespace SynCartFSComponent
                             if (!(totalPrice > currentLoggedCustomer.WalletBalance))
                             {
                                 //If Amount is Enough Create Order
-                                Order order = new Order(customerID: currentLoggedCustomer.CustomerID, productID: product.ProductID, purchaseDate: DateTime.Now, quantity: quantity, orderStatus: OrderStatus.Ordered, totalPrice: totalPrice);
+                                DateTime now = DateTime.Now;
+                                DateTime dateOnly = new DateTime(now.Year, now.Month, now.Day);
+                                Order order = new Order(customerID: currentLoggedCustomer.CustomerID, productID: product.ProductID, purchaseDate: dateOnly, quantity: quantity, orderStatus: OrderStatus.Ordered, totalPrice: totalPrice);
                                 System.Console.WriteLine("Order Placed Successfully");
                                 //Display Order ID and Shippind Date
                                 //Show Message Order Placed Sucuessfull

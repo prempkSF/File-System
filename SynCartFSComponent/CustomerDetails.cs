@@ -32,7 +32,7 @@ namespace SynCartFSComponent
         /// Customer Phone Number
         /// </summary>
         /// <value></value>
-        private double _walletBalance { get; set; }
+        // private double _walletBalance { get; set; }
       
         
         /// <summary>
@@ -52,7 +52,7 @@ namespace SynCartFSComponent
         /// To Store Customer Wallet Balance Read Only
         /// </summary>
         /// <value></value>
-        public double WalletBalance { get{return _walletBalance;} }
+        public double WalletBalance { get; set; }
         public CustomerDetails()
         {}        
         public CustomerDetails(string values)
@@ -63,7 +63,7 @@ namespace SynCartFSComponent
             CustomerName=value[1];
             City=value[2];
             MobileNumber=value[2];
-            _walletBalance=double.Parse(value[4]);
+            WalletBalance=double.Parse(value[4]);
             EmailID=value[5];
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace SynCartFSComponent
             CustomerName=customerName;
             City=city;
             MobileNumber=mobileNumber;
-            _walletBalance=walletBalance;
+            WalletBalance=walletBalance;
             EmailID=emailID;
         }
 
@@ -90,7 +90,7 @@ namespace SynCartFSComponent
         /// <returns></returns>
         public double CurrentBalance()
         {
-            return _walletBalance;
+            return WalletBalance;
         }
         /// <summary>
         /// To Recharge Customer's Wallet
@@ -98,7 +98,7 @@ namespace SynCartFSComponent
         /// <param name="rechargeAmount"></param>
         public void RechargeWallet(double rechargeAmount)
         {
-            _walletBalance=_walletBalance+rechargeAmount;
+            WalletBalance=WalletBalance+rechargeAmount;
         }
         /// <summary>
         /// To Deduct Amount from Cusotmer's Wallet
@@ -106,7 +106,7 @@ namespace SynCartFSComponent
         /// <param name="deductAmoubt"></param>
         public void DeductWallet(double deductAmoubt)
         {
-            _walletBalance=_walletBalance-deductAmoubt;
+            WalletBalance=WalletBalance-deductAmoubt;
         }
     }
 }

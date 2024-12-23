@@ -44,7 +44,7 @@ namespace SynCartFSComponent
                     }
                     else if(infoArray[j].PropertyType==typeof(DateTime))
                     {
-                        infoArray[j].SetValue(dataType,DateTime.ParseExact(fieldValues[j],"dd/MM/yyyy",null));
+                        infoArray[j].SetValue(dataType,DateTime.ParseExact(fieldValues[j],"MM/dd/yyyy hh:mm:ss tt",null));
                     }
                     else 
                     {
